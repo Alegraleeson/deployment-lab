@@ -14,7 +14,9 @@ ul {
 }
 
 button{
-    height: 200px;
+    height: 100px;
     width: 500px;
-    text-size-adjust: largest;
+    font-size: xx-large;
+    font-style: bold;
+    background-color: aquamarine;
 }
