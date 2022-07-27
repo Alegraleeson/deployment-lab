@@ -1,6 +1,7 @@
 console.log('connection successful!')
 
 const button = document.querySelector('button')
+const whyBtn = document.querySelector('.why')
 
 button.addEventListener('click', () => {
     alert('Good choice!')
@@ -10,7 +11,7 @@ const reasons = ['Squirtle squad goals', 'Part of a gang', 'Not afraid to be sil
 
 let display = []
 
-function why(){
+function why(evt){
     while(display.length <= 5){
         let randomIndex = Math.floor(Math.random() * reasons.length);
         let randomReason = reasons[randomIndex];
@@ -19,9 +20,7 @@ function why(){
         display = [...set];
 
     }
-    
-
         
 }            
             
-           
+whyBtn.addEventListener('click', why);           
