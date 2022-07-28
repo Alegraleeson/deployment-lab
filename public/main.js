@@ -1,5 +1,6 @@
 console.log('connection successful!')
 
+
 const button = document.querySelector('button')
 const whyBtn = document.querySelector('.why')
 const whyList = document.querySelector('.list')
@@ -20,15 +21,24 @@ const reasons = ['Squirtle squad goals', 'Part of a gang', 'Not afraid to be sil
 let display = []
 
 function why(evt){
-    while(display.length <= 5){
+    display = [""]
+    while(display.length <= 6){
         let randomIndex = Math.floor(Math.random() * reasons.length);
         let randomReason = reasons[randomIndex];
         display.push(randomReason)
         let set = new Set(display);
         display = [...set];
         createDisplay(display)
+        
 
     }
+    if(display.length === 6){
+        Rollbar.info("why was clicked", display)
+    } else {
+        rollbar.critical("Not enough reasons", display)
+    }
+    
+    
         
 }            
             
